@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Pop Merch Store.com</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+            <div class="content">
+                <div>
+                    <div class="input-box">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" placeholder="Enter full name" name="fullname" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="username">Username</label>
+                        <input type="text" placeholder="Enter username" name="username" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="address">User Address</label>
+                        <input type="text" placeholder="Enter your address" name="address" required>
+                    </div>
+                </div>
+                <div>
+                    <div class="input-box">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Enter your valid email address" name="email" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Enter new password" name="password" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="no_telp">Phone Number</label>
+                        <input type="text" placeholder="Enter your phone number" name="no_telp" required>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="gender-title">Gender</span>
+                <div class="gender-category">
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="alert">
+                    <p>By clicking Sign Up, you agree to our <a href="#">Terms,</a><a href="#"> Privacy Policy,</a> and
+                        <a href="#">Cookies Policy.</a> You may receive SMS notifications from us and can opt out at any
+                        time.
+                    </p>
+                </div>
+                <div class="button-container">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<%- include ("partials/header.ejs") %>
+<section class="admin-pages" id="beranda">
+    <h1>Kelola Produk</h1>
+    <div class="btn-add">
+        <a href="/adminpage/addproduct">Add data</a>
+    </div>
+    <div class="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Aksi</th>
+                    <th>Judul</th>
+                    <th>Deskripsi</th>
+                    <th>Harga</th>
+                    <th>Gambar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                    <tr>
+                        <td><%= product.id %></td>
+                        <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+                        <td><%= product.product_name %></td>
+                        <td><%= product.product_desc %></td>
+                        <td><%= product.product_price %></td>
+                        <td><img src="<%= product.product_image %>" alt="<%= product.product_name %>"></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>

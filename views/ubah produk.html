@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Pop Merch Store.com</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="bx bx-menu icon"></label>
+
+        <div class="logo">
+            <a href="#">K-Pop Merch Store</a>
+            <span>.</span>
+        </div>
+
+        <nav class="navbar">
+            <a href="/beranda">beranda</a>
+            <a href="/admin">admin</a>
+            <a href="/product">product</a>
+            <a href="/orders">orders</a>
+            <a href="/customer">customer</a>
+        </nav>
+
+        <div class="icons">
+            <form action="/logout" method="POST">
+                <button type="submit" class="logout">Logout</button>
+            </form>
+        </div>
+    </header>
+    <section class="admin-pages" id="beranda">
+        <h1>Ubah Produk</h1>
+        <form>
+            <table border="0" class="form-admin">
+                <tr>
+                    <td class="label">Judul:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="label">Deskripsi:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="label">Harga:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="label">Gambar:</td>
+                    <td><input type="file"></td>
+
+                </tr>
+                <h2></h2>
+            </table>
+        </form>
+        <div class="btn-add">
+            <button>Ubah Produk</button>
+        </div>
+
+    </section>
+
+
+
+</body>
+
+</html>

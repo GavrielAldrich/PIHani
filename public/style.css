@@ -1,0 +1,595 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --pink: #e84393;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Tahoma, Geneva, Verdana, sans-serif, 'Times New Roman', Times, serif, 'Arial Narrow', Arial, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif, 'Arial Narrow', Arial, sans-serif, 'Times New Roman', Times, serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Geneva, Tahoma, sans-serif, Helvetica, sans-serif, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 65.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+.heading,
+.heading-pages {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: rgba(255, 51, 153, .05);
+}
+
+.heading span,
+.heading-pages span {
+    color: var(--pink);
+}
+
+.products .heading-pages {
+    margin-top: 70px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background: var(--pink);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #444771;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bolder;
+    display: flex;
+    gap: 1;
+}
+
+header .logo a {
+    color: #FFD7E9;
+}
+
+header .logo span {
+    color: var(--pink);
+}
+
+header .navbar a {
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    color: #FFD7E9;
+}
+
+header .icons{
+    display: flex;
+}
+header .icons form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .icons .logout {
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    color: #FFD7E9;
+}
+
+header .icons button:hover {
+    color: var(--pink);
+}
+
+header .navbar a:hover {
+    color: var(--pink);
+}
+
+header .icons .bx {
+    font-size: 2.0rem;
+    color: #FFD7E9;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+header .icons .bx:hover {
+    color: var(--pink);
+}
+
+header #toggler {
+    display: none;
+}
+
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.beranda {
+    position: relative;
+    width: 100%;
+    margin-top: 65px;
+}
+
+.beranda img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    object-position: cover;
+    object-fit: cover;
+}
+
+.beranda .desc {
+    position: absolute;
+    top: 35%;
+    padding: 2rem 9%;
+}
+
+.beranda .content h3 {
+    font-size: 4rem;
+    color: #444771;
+}
+
+.beranda .content span {
+    font-size: 2.5rem;
+    color: var(--pink);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.beranda p {
+    font-size: 1.5rem;
+    color: #000;
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+/* media queries */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        background-position: left;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    header .icon {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+
+    header .icon {
+        display: block;
+        font-size: 3rem;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #e1defd;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #444771;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+    }
+
+    .home .content h3 {
+        font-size: 5rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+.tentang .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+
+.tentang .row .video-container {
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.tentang .row .video-container video {
+    width: 100%;
+    border: 1.5rem solid #444771;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 100%;
+    object-fit: cover;
+}
+
+.tentang .row .video-container h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: #FFD7E9;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.tentang .row .content {
+    flex: 1 1 40rem;
+}
+
+.tentang .row .content h3 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.tentang .row .content p {
+    font-size: 1.5rem;
+    color: #444771;
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+.products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.products .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.products .box-container .box .label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: .7rem 1rem;
+    font-size: 2rem;
+    color: var(--pink);
+    background: rgba(255, 51, 153, .05);
+    z-index: 1;
+    border-radius: .5rem;
+}
+
+.products .box-container .box .image {
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.products .box-container .box .image img {
+    height: 25rem;
+}
+
+.products .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.products .box-container .box .image .icons {
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.products .box-container .box:hover .image .icons {
+    bottom: 0;
+}
+
+.products .box-container .box .image .icons a {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 50%;
+    background: var(--pink);
+    color: #fff;
+}
+
+.products .box-container .box .image .icons .cart-btn {
+    border-left: .1rem solid #fff7;
+    border-right: .1rem solid #fff7;
+    width: 100%;
+}
+
+.products .box-container .box .image .icons a:hover {
+    background: #333;
+}
+
+.products .box-container .box .content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products .box-container .box .content h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.products .box-container .box .content .price {
+    font-size: 2.5rem;
+    color: var(--pink);
+    font-weight: bolder;
+    padding-top: 1rem;
+}
+
+.review .box-container {
+    display: flex;
+    flew-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.review .box-container .box {
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    position: relative;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: #FFD7E9;
+}
+
+.review .box-container .box .fa-quote-right {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    font-size: 6rem;
+    color: #eee;
+}
+
+.review .box-container .box .stars i {
+    color: var(--pink);
+    font-size: 2rem;
+}
+
+.review .box-container .box p {
+    color: #999;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.review .box-container .box .user h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.review .box-container .box .user span {
+    font-size: 1.5rem;
+    color: #999;
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    width: 100%;
+}
+
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 2 rem 2.5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: #ffffff;
+    border-radius: .5rem;
+}
+
+.contact .row image {
+    flex: 1 1 40rem;
+}
+
+.contact .row .image img {
+    width: 100%;
+}
+
+.contact .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+}
+
+.contact .row form .box:focus {
+    border-color: var(--pink);
+}
+
+.contact .row form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box {
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
+
+.footer .box-container .box img {
+    margin-top: 1rem;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.footer .credit span {
+    color: var(--pink);
+}
+
+/* kelola admin */
+.admin-pages{
+    padding: 2rem 9%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #FFD7E9,#e1defd);
+}
+.admin-pages h1{
+    margin-top: 70px;
+    font-size: 25px;
+}
+.btn-add{
+    margin-top: 20px;
+}
+table{
+    margin-top: 50px;
+    width: 100%;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid red;
+    text-align: center;
+    padding: 8px;
+  }
+
+/* kelola admin */
+
+/* tambah admin */
+.form-admin{
+    width: 30%;
+}
+.form-admin tr td{
+    border: none;
+    text-align: left;
+    font-size: 15px;
+}
+.form-admin .label{
+    text-align: right;
+}
+.form-admin input{
+    padding: 4px;
+    background-color: transparent;
+    border: 1px solid #000;
+}
+/* tambah admin */

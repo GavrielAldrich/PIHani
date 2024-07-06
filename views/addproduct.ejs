@@ -1,0 +1,25 @@
+<%- include ("partials/header.ejs") %>
+
+    <section class="admin-pages" id="beranda">
+        <h1>Tambah Produk</h1>
+        <form action="/adminpage/addproduct" method="POST"  >
+            <table border="0" class="form-admin">
+                <tr>
+                    <td class="label">Judul:</td>
+                    <td><input type="text" name="judul"></td>
+                </tr>
+                <tr>
+                    <td class="label">Deskripsi:</td>
+                    <td><input type="text" name="deskripsi"></td>
+                </tr>
+                <tr>
+                    <td class="label">Harga:</td>
+                    <td><input type="text" name="harga"></td>
+                </tr> <!-- <tr> <td class="label">Gambar:</td> <td><input type="file" name="gambar"></td> </tr> -->
+            </table>
+            <div class="btn-add"> <button type="submit">Add Produk</button> </div>
+        </form>
+    </section>
+    </body>
+
+    </html>
