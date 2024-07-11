@@ -573,23 +573,275 @@ td, th {
     padding: 8px;
   }
 
+#admin-image{
+    max-height: 100px;
+}
+
 /* kelola admin */
 
-/* tambah admin */
-.form-admin{
-    width: 30%;
+
+/* Reset and Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto font */
 }
-.form-admin tr td{
+
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Main Wrapper */
+.main-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #FFD7E9,#e1defd); /* Light gray background */
+}
+
+/* Product Container */
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #444771;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 1000px; /* Adjust max-width based on your design */
+    width: 100%;
+    margin: 20px;
+}
+
+/* Image Gallery */
+.image-gallery {
+    flex: 1 1 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Product Details */
+.product-details {
+    flex: 1 1 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.details h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFD7E9;
+    margin-bottom: 10px;
+}
+
+.details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFD7E9;
+    margin-bottom: 10px;
+}
+
+.details p {
+    font-size: 16px;
+    color: #e1defd;
+    margin-bottom: 5px;
+}
+
+/* Sizes */
+.sizes {
+    margin-bottom: 20px;
+}
+
+.select-sizes {
+    display: flex;
+    align-items: center;
+}
+
+.select-sizes h3 {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFD7E9;
+}
+
+.select-sizes label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.select-sizes input[type="radio"] {
+    display: none;
+}
+
+.select-sizes span {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #e1defd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-sizes input[type="radio"]:checked + span {
+    border-color: #00b4d8;
+    background-color: #00b4d8;
+    color: #ffffff;
+}
+
+/* Colors */
+.colors {
+    margin-bottom: 20px;
+}
+
+.select-colors {
+    display: flex;
+    align-items: center;
+}
+
+.select-colors h3 {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFD7E9;
+}
+
+.select-colors label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.select-colors input[type="radio"] {
+    display: none;
+}
+
+.select-colors span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.color-1 {
+    background-color: #d90429;
+}
+
+.color-2 {
+    background-color: #38b000;
+}
+
+.color-3 {
+    background-color: #0081a7;
+}
+
+.color-4 {
+    background-color: #ffd100;
+}
+
+.select-colors input[type="radio"]:checked + span {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px #ffffff, 0 0 0 6px #011627;
+}
+
+/* Quantity */
+.quantity {
+    margin-bottom: 20px;
+}
+
+.select-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.select-quantity h3 {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFD7E9;
+}
+
+.select-quantity input[type="number"] {
+    width: 60px;
+    padding: 8px 12px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555555;
+}
+
+/* Buy Button */
+.sub-btn {
+    margin-top: auto;
+    text-align: center;
+}
+
+.submit {
+    display: inline-block;
+    padding: 12px 24px;
+    background-image: linear-gradient(to right, #FFD7E9,#e1defd);
+    color: #444771;
+    font-size: 18px;
+    font-weight: 500;
     border: none;
-    text-align: left;
-    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.form-admin .label{
-    text-align: right;
+
+.submit:hover {
+    background-color: #00b4d8;
 }
-.form-admin input{
-    padding: 4px;
-    background-color: transparent;
-    border: 1px solid #000;
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+    }
+    
+    .image-gallery {
+        order: 2;
+    }
+    
+    .product-details {
+        order: 1;
+        padding: 20px;
+    }
+    
+    .controls {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .select-sizes,
+    .select-colors,
+    .select-quantity {
+        margin-bottom: 15px;
+    }
 }
-/* tambah admin */

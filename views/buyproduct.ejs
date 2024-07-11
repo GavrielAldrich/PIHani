@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Pop Merch Store.com</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <section class="main-wrap">
+        <div class="product">
+            <div class="image-gallery">
+                <img src="/uploads/<%= product.product_image %>" id="productImg" alt="<%= product.product_name %>">
+            </div>
+            <div class="product-details">
+                <div class="details">
+                    <h2><%= product.product_name %></h2>
+                    <h3>Rp <%= Number(product.product_price).toFixed(2) %></h3>
+                    <p><%= product.product_desc %></p>
+                </div>
+                <div class="quantity">
+                    <form action="/buyproduct/<%= product.id %>" method="POST">
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+                        <input type="hidden" name="productName" value="<%= product.product_name %>">
+                        <input type="hidden" name="productPrice" value="<%= product.product_price %>">
+                        <h3>Quantity:</h3>
+                        <input type="number" name="quantity" value="1" min="1" required>
+                        <div class="sub-btn">
+                            <button type="submit" class="submit">Buy Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../public/js/app.js"></script>
+</body>
+</html>

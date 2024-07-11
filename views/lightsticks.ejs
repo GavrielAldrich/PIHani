@@ -1,58 +1,30 @@
 <%- include ("partials/header.ejs") %>
 
 <section class="products" id="products">
-
-        <h1 class="heading-pages"> light<span> sticks </span> </h1>
-    
-        <div class="box-container">
-    
+    <h1 class="heading-pages">Lightsticks</h1>
+    <div class="box-container">
+        <% products.forEach(product => { %>
             <div class="box">
                 <span class="label">new</span>
                 <div class="image">
-                    <img src="aespa lightsticks.jpg" alt="">
+                    <img src="/uploads/<%= product.product_image %>" alt="<%= product.product_name %>">
                     <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">Order Now</a>
-                        <a href="#" class="fas fa-share"></a>
+                        <a href="#" class="cart-btn" onclick="orderNow('<%= product.id %>')">Order Now</a>
                     </div>
                 </div>
                 <div class="content">
-                    <h3>AESPA - OFFICIAL LIGHT STICK</h3>
-                    <div class="price"> Rp577.000 </span> </div>
+                    <h3><%= product.product_name %></h3>
+                    <div class="price">Rp <%= product.product_price %> </div>
                 </div>
             </div>
-
-            <div class="box">
-                <span class="label">new</span>
-                <div class="image">
-                    <img src="red velvet lightstick.jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">Order Now</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>RED VELVET - OFFICIAL LIGHT STICK</h3>
-                    <div class="price"> Rp577.000 </span> </div>
-                </div>
-            </div>
-    
-            <div class="box">
-                <span class="label">new</span>
-                <div class="image">
-                    <img src="girls generation lightstick.jpg" alt="">
-                    <div class="icons">
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="cart-btn">Order Now</a>
-                        <a href="#" class="fas fa-share"></a>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>GIRL'S GENERATION - OFFICIAL LIGHT STICK</h3>
-                    <div class="price"> Rp742.000 </span> </div>
-                </div>
-            </div>
-    
-        </div>
+        <% }); %>
+    </div>
 </section>
+
+<!-- JavaScript for order action -->
+<script>
+    function orderNow(productId) {
+        // Example implementation: Redirect to a route for buying the product
+        window.location.href = '/buyproduct/' + productId;
+    }
+</script>

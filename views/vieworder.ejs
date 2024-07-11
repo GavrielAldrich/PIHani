@@ -1,6 +1,6 @@
 <%- include ("partials/header.ejs") %>
 <section class="admin-pages" id="beranda">
-    <h1>Kelola Produk</h1>
+    <h1>Kelola Pesanan</h1>
     <div class="btn-add">
         <a href="/adminpage/addproduct">Tambah Produk</a>
         <a href="/adminpage/vieworder">Kelola Pesanan</a>
@@ -11,28 +11,29 @@
                 <tr>
                     <th>No.</th>
                     <th>Aksi</th>
-                    <th>Judul</th>
-                    <th>Deskripsi</th>
-                    <th>Tipe</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>No. Telepon</th>
+                    <th>Jumlah Pesanan</th>
+                    <th>Nama Produk</th>
+                    <th>Harga Produk</th>
                 </tr>
             </thead>
             <tbody>
                 <% let counter = 1; %>
-                <% products.forEach(product => { %>
+                <% orders.forEach(order => { %>
                     <tr>
                         <td><%= counter %></td>
                         <td>
-                            <a href="/adminpage/editproduct/<%= product.id %>">Edit</a> | 
-                            <a href="#" onclick="deleteProduct(<%= product.id %>)">Delete</a>
+                            <a href="#" onclick="deleteOrder(<%= order.id %>)">Delete</a>
                             <!-- Use JavaScript to confirm deletion -->
                         </td>
-                        <td><%= product.product_name %></td>
-                        <td><%= product.product_desc %></td>
-                        <td><%= product.product_type %></td>
-                        <td><%= product.product_price %></td>
-                        <td><img id="admin-image" src="/uploads/<%= product.product_image %>" alt="<%= product.product_name %>"></td>
+                        <td><%= order.buyer_username %></td>
+                        <td><%= order.buyer_email %></td>
+                        <td><%= order.buyer_no_telp %></td>
+                        <td><%= order.order_quantity %></td>
+                        <td><%= order.product_name %></td>
+                        <td><%= order.product_price %></td>
                     </tr>
                     <% counter++; %>
                 <% }); %>
@@ -41,16 +42,16 @@
     </div>
 </section>
 
-<!-- JavaScript function to handle product deletion -->
+<!-- JavaScript function to handle order deletion -->
 <script>
-    function deleteProduct(productId) {
-        if (confirm('Are you sure you want to delete this product?')) {
-            fetch(`/adminpage/deleteproduct/${productId}`, {
+    function deleteOrder(orderId) {
+        if (confirm('Are you sure you want to delete this order?')) {
+            fetch(`/adminpage/deleteorder/${orderId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ productId: productId })
+                body: JSON.stringify({ orderId: orderId })
             })
             .then(response => {
                 if (!response.ok) {
@@ -60,7 +61,7 @@
                 window.location.reload();
             })
             .catch(error => {
-                console.error('Error deleting product:', error);
+                console.error('Error deleting order:', error);
                 // Handle error
             });
         }

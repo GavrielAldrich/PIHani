@@ -1,0 +1,43 @@
+<%- include ("partials/header.ejs") %>
+
+<section class="admin-pages" id="edit-product">
+    <h1>Edit Product</h1>
+    <form action="/adminpage/editproduct/<%= product.id %>" method="POST" enctype="multipart/form-data">
+        <table border="0" class="form-admin">
+            <tr>
+                <td class="label">Judul:</td>
+                <td><input type="text" name="judul" value="<%= product.product_name %>"></td>
+            </tr>
+            <tr>
+                <td class="label">Deskripsi:</td>
+                <td><input type="text" name="deskripsi" value="<%= product.product_desc %>"></td>
+            </tr>
+            <tr>
+                <td class="label">Harga:</td>
+                <td><input type="text" name="harga" value="<%= product.product_price %>"></td>
+            </tr>
+            <tr>
+                <td class="label">Kategori:</td>
+                <td>
+                    <select name="kategori">
+                        <option value="albums" <%= product.category === 'albums' ? 'selected' : '' %>>Albums</option>
+                        <option value="lightsticks" <%= product.category === 'lightsticks' ? 'selected' : '' %>>Lightsticks</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">Gambar:</td>
+                <td>
+                    <input type="file" name="gambar">
+                    <% if (product.product_image) { %>
+                        <br>
+                        <img src="/uploads/<%= product.product_image %>" alt="<%= product.product_name %>" style="max-width: 200px;">
+                    <% } %>
+                </td>
+            </tr>
+        </table>
+        <div class="btn-update"><button type="submit">Update Product</button></div>
+    </form>
+</section>
+</body>
+</html>
